@@ -1,9 +1,6 @@
 import Fastify from "fastify";
-import * as dotenv from "dotenv";
 import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
-
-dotenv.config();
 
 const fastify = Fastify({ logger: true });
 const prisma = new PrismaClient();
@@ -68,7 +65,7 @@ async function start() {
   try {
     await fastify.listen({
       host: "0.0.0.0",
-      port: Number(process.env.PORT ?? 3000),
+      port: 3000,
     });
   } catch (error) {
     fastify.log.error(error);
