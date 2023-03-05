@@ -1,0 +1,46 @@
+@URL = http://localhost:3000
+
+###
+GET {{URL}}
+
+###
+GET {{URL}}/students
+
+###
+# @prompt id
+GET {{URL}}/students/{{id}}
+
+###
+# @prompt name
+# @prompt age
+# @prompt email
+# @prompt phone
+POST {{URL}}/students
+Content-Type: application/json
+
+{
+  "name": "{{name}}",
+  "age": "{{age}}",
+  "email": "{{email}}",
+  "phone": "{{phone}}"
+}
+
+###
+# @prompt id
+# @prompt name
+# @prompt age
+# @prompt email
+# @prompt phone
+PUT {{URL}}/students/{{id}}
+Content-Type: application/json
+
+{
+  "name": "{{name}}",
+  "age": "{{age}}",
+  "email": "{{email}}",
+  "phone": "{{phone}}"
+}
+
+###
+# @prompt id
+DELETE {{URL}}/students/{{id}}
